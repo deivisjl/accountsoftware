@@ -1,9 +1,9 @@
 <?php 
- 	require_once 'includes/redirect.php'; 
-	require_once 'includes/baseurl.php'; 
-	require_once 'views/header.php';
-	require_once 'views/sidebar.php';
-	require_once 'views/content.php';
+ 	include 'includes/redirect.php'; 
+	include 'includes/baseurl.php'; 
+	include 'views/header.php';
+	include 'views/sidebar.php';
+	include 'views/content.php';
 ?>
 
 <!--=========================================================================================-->
@@ -57,5 +57,5 @@
 
 <?php 
 
-	require_once 'views/footer.php'; 	
+	include 'views/footer.php'; 	
 ?>

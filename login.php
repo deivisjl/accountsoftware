@@ -1,8 +1,8 @@
-<?php  
+<?php 
+session_start();
+  if(isset($_SESSION["login"])){ 
 
-  if(isset($_SESSION["account"])){ 
-    
-    header("Location:" . 'http://' . $_SERVER['HTTP_HOST'] . '/index.php');
+    header("Location: index.php");
   }else{
 ?>
 <!DOCTYPE html>

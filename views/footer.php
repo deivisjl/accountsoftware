@@ -34,6 +34,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 
+<script type="text/javascript" src="views/plugins/datatables/jquery.dataTables.min.js"></script>
+
 
 </body>
 </html>
