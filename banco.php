@@ -16,19 +16,14 @@
             <a href="/agregar-banco.php" class="btn btn-success">Agregar nuevo registro</a>
           </div>
 
-    <?php if(isset($_SESSION["insertBanco"]) && $_SESSION["insertBanco"]==1) {?>
-          <div class="alert alert-success alert-dismissible">
+          <br/>
+
+    <?php if(isset($_SESSION["banco"]) && !empty($_SESSION["banco"])) {?>
+          <div class="<?= $_SESSION["banco"]["class"] ?>">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-check"></i> Mensaje</h4>
-                Registro exitoso!
+                <?= $_SESSION["banco"]["message"]  ?>
           </div>
-    <?php  } else if(isset($_SESSION["insertBanco"]) && $_SESSION["insertBanco"]==2){ ?>
-          <div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-check"></i> Mensaje</h4>
-                Error en el registro
-          </div>
-    <?php } unset($_SESSION["insertBanco"]) ?>
+    <?php  } unset($_SESSION["banco"])?>
 
             
         <div class="box-body">
@@ -76,11 +71,11 @@
               {'data': 'Id'},
               {'data': 'Nombre'},
               {'data': 'Fecha'},              
-              {'defaultContent':'<button class="editar btn btn-success">Depositar</button>'}
+              {'defaultContent':'<a class="editar label label-success">Editar</a>'}
           ],
           "language": idioma_spanish
     });
-    //obtener_data_editar("#compra tbody",table);
+    obtener_data_editar("#bancos tbody",table);
   }
 
   var idioma_spanish = {
@@ -111,19 +106,13 @@
   
 
   var obtener_data_editar = function(tbody,table){
-      $(tbody).on("click","button.editar",function(){
+      $(tbody).on("click","a.editar",function(){
         var data = table.row($(this).parents("tr")).data();
         
-        var idcompra = data.Id;
-        $.ajax({
-          method:"POST",
-          url: "./controllers/getReporteDetalleCompra.php",
-          data: 'Id='+idcompra
-        }).done(function(info){
-          $('#agrega-registros').html(info);
-          $('#myModalDetalle').modal('show');
+        var bancoId = data.Id;
 
-        });
+        window.location.href = './editar-banco.php?id=' + bancoId;
+
       });
     }
 </script>
