@@ -18,11 +18,17 @@ $query = "SELECT id, nombre, created_at as fecha
 							Order by {$ordenadores[$columna]} {$search['order'][0]["dir"]}
 								LIMIT {$limite} ";
 
+$queryCount = "SELECT count(id) as Total
+				from banco
+					Where {$ordenadores[$columna]} LIKE '%$criterio%'
+							Order by {$ordenadores[$columna]} {$search['order'][0]['dir']}";
+
 $datosResult = mysqli_query($db,$query);
 
-$valores = array();
+$datosCount = mysqli_query($db,$queryCount);
+$cantidad = mysqli_fetch_array($datosCount);
 
-$cantidad = 0;
+$valores = array();
 
  while($datos = mysqli_fetch_array($datosResult)){ 
  	$valores[] = array(
@@ -30,14 +36,13 @@ $cantidad = 0;
 			'Nombre' => $datos["nombre"],
 			'Fecha' => $datos["fecha"],
 	);
-
-	$cantidad++;		
+	
  }
 
 $respuesta = array(
 		'draw' => $search["draw"],
-		'recordsTotal' => $cantidad,
-		'recordsFiltered' => $cantidad,
+		'recordsTotal' => $cantidad["Total"],
+		'recordsFiltered' => $cantidad["Total"],
 		'data' => $valores,
 		);
 
