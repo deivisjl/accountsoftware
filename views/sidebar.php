@@ -21,7 +21,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="banco.php">Banco</a></li>
-            <li><a href="#">Tipo cuenta</a></li>
+            <li><a href="tipocuenta.php">Tipo cuenta</a></li>
             <li><a href="#">Cuenta Bancaria</a></li>           
           </ul>          
         </li>
