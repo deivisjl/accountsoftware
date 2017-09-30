@@ -34,7 +34,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="categoria.php">Categorias</a></li>
-            <li><a href="tipocuenta.php">Metodos depreciativos</a></li>
+            <li><a href="metodo.php">Metodos depreciativos</a></li>
             <li><a href="porcentaje.php">Porcentajes</a></li>           
           </ul>          
         </li>

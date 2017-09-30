@@ -10,28 +10,29 @@
 
  <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Porcentajes de Depreciacion</h3>
+              <h3 class="box-title">Categoria de Activos</h3>
             </div>
           <div class="text-center text-center">
-            <a href="/agregar-porcentaje.php" class="btn btn-success">Agregar nuevo registro</a>
+            <a href="/agregar-categoria.php" class="btn btn-success">Agregar nuevo registro</a>
           </div>
 
           <br/>
 
-    <?php if(isset($_SESSION["perc"]) && !empty($_SESSION["perc"])) {?>
-          <div class="<?= $_SESSION["perc"]["class"] ?>">
+    <?php if(isset($_SESSION["categoria"]) && !empty($_SESSION["categoria"])) {?>
+          <div class="<?= $_SESSION["categoria"]["class"] ?>">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <?= $_SESSION["perc"]["message"]  ?>
+                <?= $_SESSION["categoria"]["message"]  ?>
           </div>
-    <?php  } unset($_SESSION["perc"])?>
+    <?php  } unset($_SESSION["categoria"])?>
 
             
         <div class="box-body">
-            <table id="percent" class="table table-bordered">
+            <table id="categoria" class="table table-bordered">
                   <thead>
                     <tr>
                       <th>Codigo</th>
-                      <th>Porcentaje</th>
+                      <th>Categoria</th>
+                      <th>Porcentaje Deprec</th>
                       <th>Descripcion</th>
                       <th>Fecha de Ingreso</th>
                       <th>Accion</th>
@@ -59,17 +60,18 @@
   });
 
   var listar = function(){
-    var table = $("#percent").DataTable({
+    var table = $("#categoria").DataTable({
       "processing": true,
             "serverSide": true,
             "destroy":true,
             "order": [[ 0, "desc" ]],
             "ajax":{
-            'url': './controllers/porcentaje/getPorcentaje.php',
+            'url': './controllers/categoria/getCategoria.php',
             'type': 'GET'
           },
           "columns":[
               {'data': 'Id'},
+              {'data': 'Categoria'},
               {'data': 'Porcentaje'},
               {'data': 'Descripcion'},
               {'data': 'Fecha'},              
@@ -79,7 +81,7 @@
 
           "order": [[ 0, "asc" ]]
     });
-    obtener_data_editar("#percent tbody",table);
+    obtener_data_editar("#categoria tbody",table);
   }
 
   var idioma_spanish = {
@@ -113,9 +115,9 @@
       $(tbody).on("click","a.editar",function(){
         var data = table.row($(this).parents("tr")).data();
         
-        var porcId = data.Id;
+        var bancoId = data.Id;
 
-        window.location.href = './editar-porcentaje.php?id=' + porcId;
+        window.location.href = './editar-categoria.php?id=' + bancoId;
 
       });
     }

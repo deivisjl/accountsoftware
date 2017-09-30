@@ -73,7 +73,9 @@
               {'data': 'Fecha'},              
               {'defaultContent':'<a class="editar label label-success">Editar</a>'}
           ],
-          "language": idioma_spanish
+          "language": idioma_spanish,
+
+          "order": [[ 0, "asc" ]]
     });
     obtener_data_editar("#bancos tbody",table);
   }
