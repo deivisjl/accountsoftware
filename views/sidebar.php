@@ -40,6 +40,19 @@
         </li>
 
         <li class="treeview">
+          <a href="#"><i class="fa fa-money"></i> <span>Mantenimiento</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="plazo.php">Plazos</a></li>
+            <li><a href="tipocompra.php">Tipo Compra</a></li>
+            <li><a href="porcentaje.php">Porcentajes</a></li>           
+          </ul>          
+        </li>
+
+        <li class="treeview">
           <a href="#"><i class="fa fa-upload"></i> <span>Compras</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
