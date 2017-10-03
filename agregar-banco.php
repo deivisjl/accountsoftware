@@ -1,11 +1,10 @@
 <?php 
- 	include 'includes/redirect.php'; 
-	include 'includes/baseurl.php'; 
-	include 'views/header.php';
-	include 'views/sidebar.php';
-	include 'views/content.php';
+    include 'includes/redirect.php'; 
+    include 'includes/baseurl.php'; 
+    include 'views/header.php';
+    include 'views/sidebar.php';
+    include 'views/content.php';
 ?>
-
 <!--=========================================================================================-->
 
  <div class="box box-primary">

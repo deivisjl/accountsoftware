@@ -11,7 +11,7 @@ if (isset($_POST['guardar'])) {
 	
 	$nombre = $_POST['nombre'];
 
-	guardar($nombre, $db, $baseurl);
+	guardar($nombre, $db);
 
 }else if(isset($_POST['editar'])){
 
