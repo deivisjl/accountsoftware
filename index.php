@@ -20,6 +20,14 @@
             <div class="box-header with-border">
               <h3 class="box-title">Quick Example</h3>
             </div>
+
+
+              <?php if(isset($_SESSION["index"]) && !empty($_SESSION["index"])) {?>
+                    <div class="<?= $_SESSION["index"]["class"] ?>">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <?= $_SESSION["index"]["message"]  ?>
+                    </div>
+              <?php  } unset($_SESSION["index"])?>
             <!-- /.box-header -->
             <!-- form start -->
             <form role="form">

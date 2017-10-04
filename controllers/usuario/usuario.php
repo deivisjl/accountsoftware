@@ -23,6 +23,14 @@ if (isset($_POST['guardar'])) {
 
   editar($parametros,$db);
 
+}else if(isset($_POST['editarpass'])){
+
+    $parametros = array();
+
+    $parametros = parseIncomingParameters();
+
+    cambiarpassword($parametros,$db);
+
 }else{
 
   header("Location: index.php");
@@ -98,6 +106,39 @@ function editar($parametros = array(), $db){
   }
 
 
+}
+
+function cambiarpassword($parametros = array(), $db)
+{
+  
+  $userCurrent = $_SESSION["login"]["id"];
+
+  $pass = sha1($parametros['pass']);
+
+  $query = "UPDATE users set password = '{$pass}' where id = '{$userCurrent}'";
+
+  $result = $db->query($query);
+
+  if ($result) {
+    
+      $response["message"] = "Actualizacion exitosa";
+
+      $response["class"] = "alert alert-success alert-dismissible";
+      
+      $_SESSION['index'] = $response;
+
+      header("Location: $baseurl/index.php");
+
+  }else{
+
+      $response["message"] = "Error al actualizar";
+
+      $response["class"] = "alert alert-danger alert-dismissible";
+
+      $_SESSION['index'] = $response;
+
+      header("Location: $baseurl/index.php");
+  }
 }
 
 function parseIncomingParameters(){
