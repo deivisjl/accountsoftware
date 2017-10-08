@@ -22,17 +22,17 @@
 
 
 <!-- jQuery 2.2.3 -->
-<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="views/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="views/bootstrap/js/bootstrap.min.js"></script>
 <!-- ChartJS 1.0.1 -->
-<script src="plugins/chartjs/Chart.min.js"></script>
+<script src="views/plugins/chartjs/Chart.min.js"></script>
 <!-- FastClick -->
-<script src="plugins/fastclick/fastclick.js"></script>
+<script src="views/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/app.min.js"></script>
+<script src="views/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<script src="views/dist/js/demo.js"></script>
 
 <script type="text/javascript" src="views/plugins/datatables/jquery.dataTables.min.js"></script>
 

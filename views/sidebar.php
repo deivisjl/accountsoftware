@@ -53,7 +53,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#"><i class="fa fa-upload"></i> <span>Compras</span>
+          <a href=""><i class="fa fa-upload"></i> <span>Compras</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -66,7 +66,7 @@
           </ul>          
         </li>
 
-        <li><a href="#"><i class="fa fa-bank"></i> <span>Usuarios</span></a></li>
+        <li><a href="/compra.php"><i class="fa fa-bank"></i> <span>Compras de activos</span></a></li>
 
         <li><a href="#"><i class="fa fa-bank"></i> <span>Reportes</span></a></li>
 
