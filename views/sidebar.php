@@ -68,6 +68,8 @@
 
         <li><a href="/compra.php"><i class="fa fa-bank"></i> <span>Compras de activos</span></a></li>
 
+        <li><a href="/cuentas-por-pagar.php"><i class="fa fa-bank"></i> <span>Cuentas por pagar</span></a></li>
+
         <li><a href="#"><i class="fa fa-bank"></i> <span>Reportes</span></a></li>
 
 

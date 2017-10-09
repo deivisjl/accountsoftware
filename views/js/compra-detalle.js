@@ -89,7 +89,7 @@ registrar: function(item)
             detalle_compra.detalle.totalcheque += fila.totalcheque;
         })
 
-        console.log(detalle_compra.detalle);
+        //console.log(detalle_compra.detalle);
 
         var templatecheque = $.templates("#cheque-detalle-template");
 
