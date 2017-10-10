@@ -66,7 +66,7 @@ $(document).ready(function() {
 
         if(detalle_pago.detalle.cheques.length == 0)
         {
-            alert('Debe agregar por lo menos un detalle a la compra');
+            alert('Debe agregar por lo menos un detalle al pago');
             return;
 
         }else if(idcuenta.val() == 0 || idcuenta.val() == ''){
@@ -96,6 +96,7 @@ $(document).ready(function() {
                     if(info.resp == 'EXITO'){
                           window.location.href = './cuentas-por-pagar.php';
                      }else{
+
                         $('#load').append('<div id="alertdiv" class="alert alert-danger"><a class="close" data-dismiss="alert"></a><span>'+ info.msj +'</span></div>')
                             setTimeout(function() { 
                               $("#alertdiv").remove();

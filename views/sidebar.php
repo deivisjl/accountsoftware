@@ -70,7 +70,18 @@
 
         <li><a href="/cuentas-por-pagar.php"><i class="fa fa-bank"></i> <span>Cuentas por pagar</span></a></li>
 
-        <li><a href="#"><i class="fa fa-bank"></i> <span>Reportes</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-money"></i> <span>Reportes</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="reporte-banco.php">Bancos</a></li>
+            <li><a href="">Activos</a></li>
+            <li><a href="">Cuentas por pagar</a></li>           
+          </ul>          
+        </li>
 
 
       </ul>
