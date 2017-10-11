@@ -78,7 +78,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="reporte-banco.php">Bancos</a></li>
-            <li><a href="">Activos</a></li>
+            <li><a href="reporte-efectivo.php">Efectivo</a></li>
             <li><a href="">Cuentas por pagar</a></li>           
           </ul>          
         </li>

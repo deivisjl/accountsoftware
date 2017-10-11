@@ -110,6 +110,11 @@ $(document).ready(function() {
 
         var form = $(this);
 
+
+        var metodo = $("#forma").val();
+
+
+
         if(detalle_compra.detalle.items.length == 0)
         {
             alert('Debe agregar por lo menos un detalle a la compra');
