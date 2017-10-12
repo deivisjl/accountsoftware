@@ -110,8 +110,31 @@ $(document).ready(function() {
 
         var form = $(this);
 
+        metodo = $("#forma").val(),
+        voucher = $("#voucher"),
+        acreedor = $("#acreedor"),
+        plazo = $('input:radio[name=optionsRadios]:checked').val();
 
-        var metodo = $("#forma").val();
+        if (voucher.val() == 0 || voucher.val() == '') {
+            alert('Debe ingresar el numero de comprobante');
+            return;   
+        }
+
+        if (acreedor.val() == '') {
+            alert('Debe ingresar el nombre del acreedor');
+            return;   
+        }
+
+
+        if (metodo == 0) {
+            alert('Seleccione una forma de pago');
+            return;
+        }
+
+            detalle_compra.detalle.forma_pago = metodo;
+            detalle_compra.detalle.voucher = voucher.val();
+            detalle_compra.detalle.acreedor = acreedor.val();
+            detalle_compra.detalle.plazo = plazo;
 
 
 
@@ -136,6 +159,9 @@ $(document).ready(function() {
                     $("#load").removeClass('block-loading');
                     var json_info = info.resp;
                     console.log(json_info);
+                    console.log(info.msj);
+                    return;
+
 
                     if(info.resp == 'EXITO'){
                           window.location.href = './compra.php';
@@ -161,28 +187,9 @@ $(document).ready(function() {
     var chequeno = $("#nocheque"),
         cuenta = $("#cuenta"),
         tenedor = $("#tenedor"),
-        cantidad = $("#cantidadq"),
+        cantidad = $("#cantidadq");
 
-        metodo = $("#forma").val(),
-        voucher = $("#voucher"),
-        acreedor = $("#acreedor"),
-        plazo = $('input:radio[name=optionsRadios]:checked').val();
-
-        if (voucher.val() == 0 || voucher.val() == '') {
-            alert('Debe ingresar el numero de comprobante');
-            return;   
-        }
-
-        if (acreedor.val() == '') {
-            alert('Debe ingresar el nombre del acreedor');
-            return;   
-        }
-
-
-        if (metodo == 0) {
-            alert('Seleccione una forma de pago');
-            return;
-        }
+        
 
         //validaciones
         if (chequeno.val() == null || !isNumber(chequeno.val()) || chequeno.val() <= 0) {
@@ -204,11 +211,6 @@ $(document).ready(function() {
             alert('Debe ingresar el monto del cheque');
             return;
         }
-
-            detalle_compra.detalle.forma_pago = metodo;
-            detalle_compra.detalle.voucher = voucher.val();
-            detalle_compra.detalle.acreedor = acreedor.val();
-            detalle_compra.detalle.plazo = plazo;
 
 
         detalle_compra.cheque({
