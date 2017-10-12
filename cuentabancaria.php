@@ -77,13 +77,15 @@
               {'data': 'Banco'},
               {'data': 'Tipo'},
               {'data': 'Fecha'},              
-              {'defaultContent':'<a class="editar label label-success">Editar</a>'}
+              {'defaultContent':'<a class="editar label label-success">Editar</a>  <a class="depositar label label-danger">Depositar</a>'}
           ],
           "language": idioma_spanish,
 
           "order": [[ 0, "asc" ]]
     });
     obtener_data_editar("#cuentaban tbody",table);
+
+    obtener_data_depositar("#cuentaban tbody",table);
   }
 
   var idioma_spanish = {
@@ -123,4 +125,14 @@
 
       });
     }
+
+  var obtener_data_depositar = function(tbody,table){
+    $(tbody).on("click","a.depositar",function(){
+       var data = table.row($(this).parents("tr")).data();
+
+       var bancoId = data.Id;
+
+       window.location.href = './deposito.php?id=' + bancoId;
+    });
+  }
 </script>
