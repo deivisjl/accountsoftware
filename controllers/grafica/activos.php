@@ -11,14 +11,6 @@ $rows = [];
 
 $resp = [];
 
-/*$query = "SELECT count(T.id) as conteo, B.nombre 
-			from transaccion as T 
-					inner join cuentabancaria as C 
-							On T.cuentaid = C.id 
-								inner join banco as B 
-									On C.bancoid = B.id 
-											group by B.nombre";*/
-
 
 $query = "SELECT count(A.id) as conteo, C.nombre
 				from activofijo as A 

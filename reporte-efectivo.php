@@ -35,7 +35,7 @@
 
             <div class="row">
                <div class="col-md-12">
-                    <div id="pagos"></div>
+                    <div id="efectivo" style="width: 900px; height: 500px;"></div>
                </div>
             </div>
 
@@ -146,27 +146,35 @@ function drawBasic() {
     </script>
 
 
-    <!--script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var jsonData = $.ajax({
-          url: "./controllers/grafica/pagos.php",
+    <script type="text/javascript">
+    
+    // Load the Visualization API and the piechart package.
+    google.charts.load('current', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+      
+    function drawChart() {
+      var jsonData = $.ajax({
+          url: "./controllers/grafica/disponible.php",
           dataType: "json",
           async: false
           }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(jsonData);
 
-        var data = google.visualization.arrayToDataTable(jsonData);
-
-        var options = {
-          title: 'Composicion de cuentas por pagar'
+      var options = {
+          title: 'Composicion de cuentas segun saldo',
+          is3D: true,
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('pagos'));
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('efectivo'));
+      chart.draw(data, options, {width: 400, height: 240});
+    }
 
-        chart.draw(data, options);
-      }
-    </script-->
+    </script>
+
+
   
