@@ -80,6 +80,7 @@
             <li><a href="reporte-banco.php">Bancos</a></li>
             <li><a href="reporte-efectivo.php">Efectivo</a></li>
             <li><a href="cheque-generado.php">Cheques</a></li>           
+            <li><a href="depreciaciones.php">Depreciaciones</a></li> 
           </ul>          
         </li>
 
