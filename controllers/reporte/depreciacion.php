@@ -87,13 +87,20 @@ function depreciar($costo, $fecha, $porc){
     $preliminar = ($costo * $porc) / 100;
 
     $result = ($preliminar * $tiempo) / 365;
-
-	return number_format($result, 2, '.', '');
+	
+    return number_format($result, 2, '.', '');
+	
 }	
 
 function valorlibros($costo, $deprec){
 
-	return $costo - $deprec;
+	if ($costo > $deprec) {
+		
+		return $costo - $deprec;
+	}else{
+
+		return 0;
+	}
 }
 
 ?>
