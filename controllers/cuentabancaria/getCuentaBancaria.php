@@ -22,7 +22,7 @@ $query = "SELECT C.id, C.nocuenta, C.titular, B.nombre as banco,T.nombre as tipo
 							Order by {$ordenadores[$columna]} {$search['order'][0]["dir"]}
 								LIMIT {$limite} ";
 
-$queryCount = "SELECT count(id) as Total
+$queryCount = "SELECT count(C.id) as Total
 				from cuentabancaria as C 
 					inner join banco as B
 						On C.bancoid = B.id
